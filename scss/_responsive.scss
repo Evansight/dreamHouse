@@ -1,0 +1,17 @@
+$breakpoints: (
+        small:767.98px,
+        medium: 990.98px,
+        large: 1199.98px,
+        xlarge: 1441px,
+        xxlarge: 1921px,
+);
+
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media (max-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @warn "No value exists for breakpoint #{$name}.";
+  }
+}
