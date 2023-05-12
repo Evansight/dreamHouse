@@ -27,6 +27,14 @@
   --color-green: #10B981;
 }
 
+@include breakpoint(large){
+
+  :root{
+    --fs-600-32: 1.75rem;
+  }
+}
+
+
 [class*="__container"] {
   width: 100%;
   margin: 0 auto;
@@ -278,7 +286,7 @@ h1 {
   font-weight: 400;
   color: var(--color-sub-title);
   line-height: 28px;
-  @include breakpoint(large){
+  @include breakpoint(large) {
     padding-right: 70px;
   }
 }
@@ -309,7 +317,7 @@ h1 {
   max-width: 496px;
   padding: 17px 16px 17px 64px;
   position: relative;
-  @include breakpoint(large){
+  @include breakpoint(large) {
     max-width: 420px;
   }
 
@@ -332,7 +340,7 @@ h1 {
   transform: translateY(-50%);
   transition: all .4s;
   cursor: pointer;
-  @include breakpoint(large){
+  @include breakpoint(large) {
     right: 86px;
   }
 
@@ -930,7 +938,7 @@ h1 {
     display: inline-block;
     margin-left: 24px;
     margin-right: 59px;
-    @include breakpoint(large){
+    @include breakpoint(large) {
       margin-left: 18px;
       margin-right: 34px;
     }
@@ -1060,7 +1068,7 @@ h1 {
   align-items: center;
   z-index: 0;
 
-  @include breakpoint(large){
+  @include breakpoint(large) {
     width: 92%;
   }
 
@@ -1079,7 +1087,7 @@ h1 {
   position: relative;
   bottom: -45px;
   left: 55px;
-  @include breakpoint(large){
+  @include breakpoint(large) {
     display: flex;
     align-items: center;
     position: relative;
@@ -1265,7 +1273,7 @@ h1 {
   .content-wrapper {
     display: flex;
 
-    @include breakpoint(large){
+    @include breakpoint(large) {
       flex-direction: column;
     }
 
@@ -1275,6 +1283,20 @@ h1 {
       flex-direction: column;
       justify-content: space-between;
       margin-left: 32px;
+    }
+
+    .half {
+      @include breakpoint(large) {
+        width: 100%;
+      }
+    }
+
+    .left-wrapper {
+      @include breakpoint(large) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 
@@ -1331,8 +1353,8 @@ h1 {
   margin-bottom: 44px;
 }
 
-.left-wrapper{
-  @include breakpoint(xlarge){
+.left-wrapper {
+  @include breakpoint(xlarge) {
     margin-right: 28px;
   }
 }
@@ -1385,6 +1407,17 @@ h1 {
   display: flex;
   justify-content: flex-end;
 
+  @include breakpoint(large) {
+    justify-content: center;
+  }
+
+  .big-article__item{
+    .article-info__wrapper{
+      margin-left: 0;
+      max-width: 532px;
+    }
+  }
+
   .article-info__wrapper {
     max-width: 560px;
     display: flex;
@@ -1435,6 +1468,10 @@ h1 {
 }
 
 .subscribe-body {
+  @include breakpoint(large){
+    max-width: 375px;
+    width: 100%;
+  }
   .semi-title {
     margin-bottom: 32px;
   }
@@ -1536,11 +1573,18 @@ h1 {
     @include breakpoint(xlarge) {
       right: 70px;
     }
+    @include breakpoint(large) {
+      right: 15px;
+      top: 37px;
+    }
   }
 
   .right3 {
     top: 56px;
     left: 95px;
+    @include breakpoint(large) {
+      left: 25px;
+    }
   }
 
   .right4 {
