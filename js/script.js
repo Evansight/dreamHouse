@@ -48,7 +48,13 @@ $(document).ready(function (){
     elements.forEach((element) => {
         element.addEventListener('click', () => {
             popup.style.display = 'flex';
-            slider.slick();
+            slider.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                infinite: true,
+                // variableWidth: true,
+            });
         });
     });
 
