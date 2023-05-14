@@ -345,6 +345,9 @@ h1 {
   @include breakpoint(small) {
     max-width: 100%;
   }
+  @include breakpoint(small) {
+    align-items: center;
+  }
 }
 
 .main-title {
@@ -379,9 +382,14 @@ h1 {
 
 .search-form {
   position: relative;
+
   @include breakpoint(small) {
     display: flex;
     align-items: center;
+  }
+
+  @include breakpoint(small) {
+    width: 300px;
   }
 
   &:before {
@@ -397,6 +405,10 @@ h1 {
     width: 18px;
     height: 22px;
     z-index: 1;
+
+    @include breakpoint(small-extra) {
+      left: 10px;
+    }
   }
 }
 
@@ -412,6 +424,12 @@ h1 {
   }
   @include breakpoint(small) {
     max-width: none;
+  }
+
+  @include breakpoint(small-extra) {
+    border-radius: 32px 0 0 32px;
+    padding: 17px 16px 17px 38px;
+
   }
 
   &::placeholder {
@@ -433,6 +451,7 @@ h1 {
   transform: translateY(-50%);
   transition: all .4s;
   cursor: pointer;
+
   @include breakpoint(large) {
     right: 86px;
   }
@@ -441,6 +460,12 @@ h1 {
     top: auto;
     transform: none;
     right: 108px;
+  }
+
+  @include breakpoint(small-extra) {
+    padding: 18px 44px 18px 16px;
+    border-radius: 0 32px 32px 0;
+    right: 0;
   }
 
   &:after {
@@ -1586,7 +1611,7 @@ h1 {
 .article-item {
   display: flex;
   margin-bottom: 44px;
-  @include breakpoint(xlarge) {
+  @include breakpoint(small) {
     flex-direction: column;
   }
 
@@ -1650,49 +1675,55 @@ h1 {
     justify-content: center;
   }
 
-  .big-article__item {
-    .article-info__wrapper {
-      margin-left: 0;
-      max-width: 532px;
-      @include breakpoint(small-extra) {
-        max-width: unset;
-        width: 100%;
-        padding: 0 110px;
-      }
+  .big-article__item > img {
 
+    @include breakpoint(small) {
+      width: 100%;
     }
   }
 
   .article-info__wrapper {
-    max-width: 560px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     margin-left: 0;
-    margin-top: 24px;
-  }
+    max-width: 532px;
+    @include breakpoint(small-extra) {
+      max-width: unset;
+      width: 100%;
+      padding: 0 15px;
+    }
 
-  .realtor-wrap {
-    margin-bottom: 12px;
-  }
-
-  .article-title {
-    font-size: var(--fs-500-24);
-    line-height: 32px;
-    font-weight: 500;
-    color: var(--color-title);
-    margin-bottom: 12px;
-  }
-
-  p {
-    font-size: var(--fs-400-14);
-    line-height: 24px;
-    color: #626687;
-    opacity: 0.75;
-    font-weight: 400;
-    margin-bottom: 16px;
   }
 }
+
+.article-info__wrapper {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0;
+  margin-top: 24px;
+}
+
+.realtor-wrap {
+  margin-bottom: 12px;
+}
+
+//.article-title {
+//  font-size: var(--fs-500-24);
+//  line-height: 32px;
+//  font-weight: 500;
+//  color: var(--color-title);
+//  margin-bottom: 12px;
+//}
+
+p {
+  font-size: var(--fs-400-14);
+  line-height: 24px;
+  color: #626687;
+  opacity: 0.75;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
 
 //======================== subscribe ================================
 
@@ -1855,6 +1886,36 @@ h1 {
 //======================== Footer ================================//
 .footer {
   margin-bottom: 126px;
+  position: relative;
+
+  @include breakpoint(small){
+    margin-bottom: 40px;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 438px;
+    height: 494px;
+    border-radius: 32px;
+    z-index: -1;
+  }
+
+  &:before {
+    background-image: url("../img/footerBG1.svg");
+    bottom: -233px;
+    right: 0;
+  }
+
+  &:after {
+    background-image: url("../img/footerBG2.svg");
+    bottom: -142px;
+    right: 0;
+  }
 }
 
 .footer__container {
