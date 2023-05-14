@@ -386,9 +386,6 @@ h1 {
   @include breakpoint(small) {
     display: flex;
     align-items: center;
-  }
-
-  @include breakpoint(small) {
     width: 300px;
   }
 
@@ -406,7 +403,7 @@ h1 {
     height: 22px;
     z-index: 1;
 
-    @include breakpoint(small-extra) {
+    @include breakpoint(small) {
       left: 10px;
     }
   }
@@ -422,13 +419,12 @@ h1 {
   @include breakpoint(large) {
     max-width: 420px;
   }
-  @include breakpoint(small) {
-    max-width: none;
-  }
 
-  @include breakpoint(small-extra) {
+
+  @include breakpoint(small) {
     border-radius: 32px 0 0 32px;
     padding: 17px 16px 17px 38px;
+    max-width: none;
 
   }
 
@@ -455,14 +451,12 @@ h1 {
   @include breakpoint(large) {
     right: 86px;
   }
+
+
   @include breakpoint(small) {
     position: relative;
     top: auto;
     transform: none;
-    right: 108px;
-  }
-
-  @include breakpoint(small-extra) {
     padding: 18px 44px 18px 16px;
     border-radius: 0 32px 32px 0;
     right: 0;
