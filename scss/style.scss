@@ -34,6 +34,13 @@
   }
 }
 
+@include breakpoint(small) {
+
+  :root {
+    --fs-700-40: 2.125rem;
+  }
+}
+
 
 [class*="__container"] {
   width: 100%;
@@ -101,6 +108,10 @@ a {
   left: 0;
   width: 100%;
   z-index: 99;
+
+  @include breakpoint(small-extra){
+    top: 25px;
+  }
 }
 
 .header__container {
@@ -108,11 +119,19 @@ a {
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
+  @include breakpoint(small-extra) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 h1 {
   display: block;
   max-width: 115px;
+  margin-right: 5px;
+  @include breakpoint(small-extra) {
+    margin-bottom: 10px;
+  }
 }
 
 .logo {
@@ -134,6 +153,10 @@ h1 {
 .menu-list {
   display: flex;
   gap: 24px;
+
+  @include breakpoint(small) {
+    gap: 8px;
+  }
 }
 
 .menu-list__item {
@@ -157,12 +180,19 @@ h1 {
   left: 10px;
   padding-top: 15px;
   color: #F0F3FD;
+  @include breakpoint(medium) {
+    color: var(--color-title);
+  }
 
   li {
     padding: 6px 15px;
     border: 1px solid transparent;
     border-radius: 32px;
     transition: all .4s;
+    @include breakpoint(medium) {
+      color: var(--color-title);
+      border: 1px solid var(--color-title);
+    }
 
     &:hover {
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -204,7 +234,6 @@ h1 {
       color: #fff;
     }
   }
-
 }
 
 
@@ -238,7 +267,6 @@ h1 {
       top: 50%;
       right: 16px;
     }
-
   }
 }
 
@@ -269,6 +297,10 @@ h1 {
   margin-bottom: 120px;
   z-index: 1;
 
+  @include breakpoint(small-extra) {
+    padding-top: 140px;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -291,6 +323,7 @@ h1 {
   max-width: 500px;
   margin-bottom: 32px;
   z-index: 1;
+
 }
 
 .main-title {
@@ -299,6 +332,9 @@ h1 {
   font-size: var(--fs-700-40);
   font-weight: 600;
   line-height: 50px;
+  @include breakpoint(small){
+    text-align: center;
+  }
 
   span {
     color: transparent;
@@ -313,6 +349,10 @@ h1 {
   line-height: 28px;
   @include breakpoint(large) {
     padding-right: 70px;
+  }
+  @include breakpoint(small) {
+    padding-right: 0;
+    text-align: center;
   }
 }
 
@@ -390,6 +430,9 @@ h1 {
 
 .partners {
   color: var(--color-placeholder);
+  @include breakpoint(small){
+    text-align: center;
+  }
 }
 
 .partners-img__wrapper {
@@ -555,10 +598,22 @@ h1 {
     justify-content: space-between;
     margin-bottom: 40px;
     z-index: 99;
+
+    @include breakpoint(small) {
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
   }
 
   .slider-wrapper__container {
     position: relative;
+    @include breakpoint(medium) {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
 
     .slick-track {
       gap: 40px;
@@ -693,6 +748,10 @@ h1 {
 
 .description-wrapper {
   margin-left: 39px;
+  @include breakpoint(small) {
+    margin-left: 0;
+    text-align: center;
+  }
 }
 
 .tag-title {
@@ -710,13 +769,21 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
     left: -48px;
+    @include breakpoint(small) {
+      content: none;
+    }
   }
+
 }
 
 .filter {
   display: flex;
   margin: 0 32px;
   gap: 32px;
+
+  @include breakpoint(small) {
+    padding-bottom: 20px;
+  }
 
   li {
     cursor: pointer;
@@ -833,6 +900,10 @@ h1 {
   margin-bottom: 120px;
   position: relative;
 
+  @include breakpoint(small) {
+    margin-bottom: 260px;
+  }
+
   &:after {
     content: "";
     position: absolute;
@@ -858,16 +929,29 @@ h1 {
     right: 0;
     width: 438px;
     height: 494px;
-    z-index: 0;
+    z-index: -1;
   }
 }
 
 .ready-to-sell__container {
   display: flex;
+  @include breakpoint(small) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.house-info {
+  @include breakpoint(small) {
+    margin-bottom: 35px;
+  }
 }
 
 .half {
   width: 50%;
+  @include breakpoint(small) {
+    width: 100%;
+  }
 }
 
 .description-wrapper {
@@ -890,6 +974,16 @@ h1 {
   position: relative;
   margin-bottom: 76px;
 
+  @include breakpoint(small) {
+    position: relative;
+    margin-bottom: 76px;
+    margin-left: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &:after {
     content: '';
     position: absolute;
@@ -898,6 +992,12 @@ h1 {
     background-color: #F0F3FD;
     bottom: -42px;
 
+    @include breakpoint(small) {
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 440px;
+      width: 100%;
+    }
   }
 }
 
@@ -969,6 +1069,10 @@ h1 {
 
 .manager-wrapper {
   margin-left: 39px;
+  @include breakpoint(small) {
+    display: flex;
+    justify-content: center;
+  }
 
   .manager-info {
     display: inline-block;
@@ -1005,6 +1109,11 @@ h1 {
     color: #ffffff;
     top: -10px;
     transition: all .4s;
+    white-space: nowrap;
+    @include breakpoint(small) {
+      top: 0;
+      padding: 13px 16px 13px 16px;
+    }
 
     &:after {
       content: '';
@@ -1018,6 +1127,9 @@ h1 {
       top: 50%;
       transform: translateY(-50%);
       left: 22px;
+      @include breakpoint(small) {
+        content: none;
+      }
     }
 
     &:hover {
@@ -1111,6 +1223,12 @@ h1 {
     width: 92%;
   }
 
+  @include breakpoint(small) {
+    width: 100%;
+    min-height: 353px;
+    height: 100%;
+  }
+
   a {
     background-image: url('../img/readyToSell/play-icon.svg');
     background-size: cover;
@@ -1133,6 +1251,12 @@ h1 {
     bottom: -65px;
     left: 35px;
     gap: 5px;
+  }
+
+  @include breakpoint(small) {
+    align-items: end;
+    bottom: -217px;
+    left: 0;
   }
 }
 
@@ -1350,6 +1474,7 @@ h1 {
     height: 494px;
     top: -60px;
     left: 0;
+    z-index: -1;
   }
 
   &:after {
@@ -1363,6 +1488,7 @@ h1 {
     height: 494px;
     top: 120px;
     left: 0;
+    z-index: -1;
   }
 
   .semi-title {
@@ -1497,6 +1623,9 @@ h1 {
 .subscribe__container {
   background: linear-gradient(48deg, rgba(140, 182, 250, 1) 0%, rgba(241, 250, 249, 1) 43%, rgba(233, 233, 244, 1) 100%);
   border-radius: 32px;
+  @include breakpoint(small) {
+    border-radius: 0;
+  }
 }
 
 .subscribe-wrapper {
@@ -1567,6 +1696,9 @@ h1 {
   position: relative;
   width: 33%;
   height: 160px;
+  @include breakpoint(small) {
+    display: none;
+  }
 
   img {
     position: absolute;
@@ -1597,6 +1729,9 @@ h1 {
   position: relative;
   width: 33%;
   height: 160px;
+  @include breakpoint(small) {
+    display: none;
+  }
 
   img {
     position: absolute;
@@ -1645,10 +1780,19 @@ h1 {
 .footer__container {
   display: flex;
   justify-content: space-between;
+
+  @include breakpoint(small) {
+    flex-direction: column;
+
+  }
 }
 
 .footer-menu__wrapper {
   display: flex;
+  @include breakpoint(small) {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 
 .logo-wrapper {
@@ -1666,6 +1810,9 @@ h1 {
 
 .media-text__wrapper {
   max-width: 320px;
+  @include breakpoint(small) {
+    margin-bottom: 25px;
+  }
 }
 
 .media-wrapper {
@@ -1718,6 +1865,11 @@ h1 {
   @include breakpoint(large) {
     margin-left: 69px;
   }
+
+  @include breakpoint(small) {
+    margin-left: 0;
+    padding: 0 10px;
+  }
 }
 
 //======================== Adaptive ================================
@@ -1742,16 +1894,16 @@ $container-widths: (
 
 @media screen and (min-width: 767.98px) {
   [class*="__container"] {
-    max-width: map-get($container-widths, "767.98");
+    //max-width: map-get($container-widths, "767.98");
   }
 
-  .slider-wrapper__container {
-    width: calc(100vw - calc(calc(100vw - map-get($container-widths, "767.98")) / 2));
-    margin: unset;
-    margin-left: calc(calc(100vw - map-get($container-widths, "767.98")) / 2);
-    max-width: none;
-    padding: 0;
-  }
+  //.slider-wrapper__container {
+  //  width: calc(100vw - calc(calc(100vw - map-get($container-widths, "767.98")) / 2));
+  //  margin: unset;
+  //  margin-left: calc(calc(100vw - map-get($container-widths, "767.98")) / 2);
+  //  max-width: none;
+  //  padding: 0;
+  //}
 }
 
 
@@ -1760,13 +1912,13 @@ $container-widths: (
     max-width: map-get($container-widths, "990.98");
   }
 
-  .slider-wrapper__container {
-    width: calc(100vw - calc(calc(100vw - map-get($container-widths, "990.98")) / 2));
-    margin: unset;
-    margin-left: calc(calc(100vw - map-get($container-widths, "990.98")) / 2);
-    max-width: none;
-    padding: 0;
-  }
+  //.slider-wrapper__container {
+  //  width: calc(100vw - calc(calc(100vw - map-get($container-widths, "990.98")) / 2));
+  //  margin: unset;
+  //  margin-left: calc(calc(100vw - map-get($container-widths, "990.98")) / 2);
+  //  max-width: none;
+  //  padding: 0;
+  //}
 }
 
 @media screen and (min-width: 1199.98px) {

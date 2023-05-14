@@ -18,6 +18,16 @@ $(document).ready(function (){
         arrows: true,
         appendArrows: '.arrow-wrapper',
         variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    centerMode: true,
+
+                }
+            },
+        ]
     });
 
     $(".filter li").on('click', function(){
