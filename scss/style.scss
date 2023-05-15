@@ -1669,6 +1669,14 @@ h1 {
     justify-content: center;
   }
 
+  .big-article__item{
+    .article-info__wrapper{
+      max-width: 560px;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
   .big-article__item > img {
 
     @include breakpoint(small) {
