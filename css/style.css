@@ -1179,6 +1179,8 @@ h1 {
   position: relative;
   z-index: 1;
   left: -45px;
+  justify-content: center;
+  align-items: center;
 }
 
 .ready-to-sell__slider {

@@ -49,6 +49,7 @@ $(document).ready(function (){
     });
 
 
+
 // Open Popup on Element Click
     const elements = document.querySelectorAll('.element');
     const popup = document.getElementById('popup');
@@ -57,13 +58,13 @@ $(document).ready(function (){
 
     elements.forEach((element) => {
         element.addEventListener('click', () => {
-            popup.style.display = 'flex';
+            popup.style.display = 'block';
             slider.slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 centerMode: true,
                 infinite: true,
-                // variableWidth: true,
+                variableWidth: true,
             });
         });
     });
@@ -80,7 +81,7 @@ $(document).ready(function (){
         slider.slick('unslick');
     });
 
-
+``
     $('.review-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
